@@ -142,7 +142,7 @@
   }
 
   a:link {
-	  color: gray;
+	  color: #5a65f0;
 	  transition: 0.3s ease-out;
   }
 
@@ -202,7 +202,7 @@
   
   .navigation .is-active {
 	background-color: #000;
-	color: #f9f8f4;
+	color: #858df3;
 	padding-left: 1em;
 	padding-right: 1em;
 	border-radius: 999px;
