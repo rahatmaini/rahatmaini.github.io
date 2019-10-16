@@ -53,7 +53,7 @@
 
 
 .collapsible {
-	background-color: #111;
+	background-color: #00467c;
 	color: white;
 	cursor: pointer;
 	width: 100%;
@@ -80,7 +80,7 @@
 }
   
 .active, .collapsible:hover {
-	background-color: #555;
+	background-color: #005494;
 	transition: 0.3s ease-out;
 	position: -webkit-sticky;
   	position: sticky;
