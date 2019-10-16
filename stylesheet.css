@@ -201,8 +201,8 @@
   }
   
   .navigation .is-active {
-	background-color: #000;
-	color: #858df3;
+	background-color: #858df3;
+	color: #fff;
 	padding-left: 1em;
 	padding-right: 1em;
 	border-radius: 999px;
