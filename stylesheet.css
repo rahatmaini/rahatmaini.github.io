@@ -7,6 +7,8 @@
 
 }
 
+
+
 @font-face {
     font-family: product sans bold italic;
     src: url('fonts/product_sans_bold_italic-webfont.woff2') format('woff2'),
@@ -240,7 +242,8 @@ p {
 
 body {
 	background-color: #fee9f5;
-	font-family: product sans, sans-serif;
+	font-family: 'Inconsolata', monospace;
+	/*font-family: product sans, sans-serif;*/
 	padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 20px;
