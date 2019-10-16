@@ -53,7 +53,7 @@
 
 
 .collapsible {
-	background-color: #00467c;
+	background-color: #5a65f0;
 	color: white;
 	cursor: pointer;
 	width: 100%;
@@ -80,7 +80,7 @@
 }
   
 .active, .collapsible:hover {
-	background-color: #005494;
+	background-color: #858df3;
 	transition: 0.3s ease-out;
 	position: -webkit-sticky;
   	position: sticky;
@@ -160,7 +160,7 @@
   /* layout/header.css */
   
   .header {
-	background-color: #ffe4f4;
+	background-color: #fee9f5;
 	padding-bottom: 1.1em;
 	padding-top: 1em;
   }
@@ -239,7 +239,7 @@ p {
 }
 
 body {
-	background-color: #ffe4f4;
+	background-color: #fee9f5;
 	font-family: product sans, sans-serif;
 	padding-top: 0px;
     padding-right: 0px;
