@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap');
-@font-face {
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900&display=swap');
+/*@font-face {
     font-family: product sans;
     src: url('fonts/product_sans_regular-webfont.woff2') format('woff2'),
          url('fonts/product_sans_regular-webfont.woff') format('woff');
@@ -53,8 +53,7 @@
 	font-style: normal;
 }
 
-
-
+*/
 .collapsible {
 	background-color: #5a65f0;
 	color: white;
@@ -141,7 +140,7 @@
   h2 {
 	  margin-top: 19px;
 	  margin-bottom: 19px;
-	  font-weight: bold;
+	  font-weight: 900;
   }
 
   a:link {
