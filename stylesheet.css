@@ -162,7 +162,7 @@
   /* layout/header.css */
   
   .header {
-	background-color: #ffecf7;
+	background-color: #fee9ff;
 	padding-bottom: 1.1em;
 	padding-top: 1em;
 	font-weight:900;
@@ -242,7 +242,7 @@ p {
 }
 
 body {
-	background-color: #ffecf7;
+	background-color: #fee9ff;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
 	/*font-family: product sans, sans-serif;*/
