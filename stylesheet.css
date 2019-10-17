@@ -55,7 +55,7 @@
 
 */
 .collapsible {
-	background-color: #5a65f0;
+	background-color: #101010;
 	color: white;
 	cursor: pointer;
 	width: 100%;
@@ -82,7 +82,7 @@
 }
   
 .active, .collapsible:hover {
-	background-color: #858df3;
+	background-color: #3a3a3a;
 	transition: 0.3s ease-out;
 	position: -webkit-sticky;
   	position: sticky;
@@ -144,7 +144,7 @@
   }
 
   a:link {
-	  color: #5a65f0;
+	  color: black;
 	  transition: 0.3s ease-out;
   }
 
@@ -204,7 +204,7 @@
   }
   
   .navigation .is-active {
-	background-color: #5a65f0;
+	background-color: #101010;
 	color: #fff;
 	padding-left: 1em;
 	padding-right: 1em;
