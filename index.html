@@ -39,19 +39,7 @@
     }
   </style>
 
-  <script>
-var i = 0;
-var txt = 'Hello, I'm Rahat Maini';
-var speed = 50;
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("typer").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-</script>
   
 </head>
 
@@ -80,6 +68,19 @@ function typeWriter() {
   
   <div class="grid">
     <h2 id="typer"></h2>
+    <script>
+var i = 0;
+var txt = 'Hello, I'm Rahat Maini';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("typer").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
     
 <div style="float:left"><img src="images/233B013E-1C3B-4793-A2C5-D24ABB76A1DE.jpeg" style="padding-left:5%" class="myPic" width="60%" height="60%">
     <p>
