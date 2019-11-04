@@ -128,7 +128,7 @@
       <img src="images/redx.png" class="centeredImg"/>
     <p>macOS has an unusual (to users of Windows since the start, at least) quirk to it. The behavior of the red window bar button is somewhat unpredictable! Apple’s most recent apps (notably the Catalina apps that are part of “Mac Catalyst”, Apple’s project to bring iPadOS apps) behave in the most intuitive way, where the red button closes the app window AS WELL as the entire application process associated with it. However, many apps, 3rd party or 1st, do not terminate on window closure. Terminal and Safari are just the first two that come to mind. I have written an AppleScript (AppleScript script?) to correct this. It can be run in the background using Apple’s built-in <a href="https://www.maketecheasier.com/use-launchd-run-scripts-on-schedule-macos/">task scheduler</a>, some relatively janky automation built with Apple’s preinstalled Automator app, or my preferred method: Download <a href="https://www.folivora.ai/">BetterTouchTool</a> (in my opinion a must-have macOS utility), and remap the actual red window bar button across macOS to run the AppleScript below.</p>
 
-<a href="https://www.github.com/rahatmaini/handy-AppleScripts/blob/master/Red%20Button%20Task%20Killer.scpt/">macOS Red Button Task Killer</a>
+<a href="https://www.github.com/rahatmaini/handy-scripts/blob/master/Red%20Button%20Task%20Killer.scpt/">macOS Red Button Task Killer</a>
 
 <p>The script begins by retrieving a list of all processes (applications) that are not meant to be background-only processes (so, the Honey browser extension, running in the background, is not something we concern ourselves with. It is not an app that will sit on the dock with an open indicator haunting us). There is a (short) whitelist of apps that should never be killed. I have added Finder and BetterTouchTool to that list, you can add whatever apps you would like if in some cases you do prefer the red button’s default behavior. The script iterates through the list of non-background-only processes, and if a process does not have a window open (so these are apps that you have hit the red button on, but they are “hidden in plain sight”), the “osascript” command (which is the terminal command to execute an AppleScript itself, so likely the parameters that follow it can just be programmed into the AppleScript itself instead of calling a shell script. Left as an exercise to the reader…) then kills the process. Done. </p>
 
@@ -139,7 +139,23 @@
 <p>These different approaches to apps have different implications for memory and CPU management I presume, and not in a favorable way for Apple I presume. An assumption I make is that there is a tradeoff they have accepted to give users the snappiest performance while balancing computer resources, one that Windows does not bother to concern itself with in regards to this app-closing fiasco. It’s hard to say which approach is objectively better, but it does give “Think Different” some tangible credibility for Apple. Based on the existence of this post, you can probably guess which approach I prefer.</p>
     </div>
 
-
+ <button class="collapsible"><h2>Bringing macOS's Smart Folders to iOS</h2></button>
+    <div class="content">
+      <img src="images/redx.png" class="centeredImg"/>
+    <p>With the Files app in iOS, Apple brought the closest clone of Finder yet to iOS, highlighting their seriousness in turning their popular mobile platform into a serious full-time computer for an increasing number of people. As they work on bringing it to feature parity, one useful (and relatively unknown) feature of Finder is yet to show face on iOS: Smart Folders.</p>
+<p>
+Smart Folders are essentially "saved searches" (in fact, behind the scenes that is their official name, where you select certain parameters to locate a set of files and these populate a virtual folder of sorts. For example, if I wanted a folder full of all PDFs that contain "CS 4750" in their name, I could do so. Of course, the original location of these files remain unchanged, as the smart folder is simply a list of pointers to these files. Think of tags but automatic, as creation of a new PDF with "CS 4750" in its name would automatically show that PDF in the smart folder.</p>
+<p>
+The closest analog iOS's Files app has, is the Tags feature, which allows you to label files and collect them across the filesystem without altering their physical location. Thankfully, we can take advantage of Tags support on iOS and convert Smart Folders to Tags on macOS, at which point they automatically sync and show up in the iOS Files app.</p>
+<p>
+The workflow starts by going through each Saved Search on your Mac, opening the search and extracting the raw query macOS uses to search the filesystem for files that belong in that Saved Search (the mdfind command in the Terminal is how this works). After populating a dictionary of Saved Searches and their raw queries, I go through every file returned by each raw query, and tag it (using jdberry's wonderful <a href="https://github.com/jdberry/tag"> command line tagging utility </a>) based on the name of the saved search.</p>
+<p>
+Now with clever naming of files (or whatever parameters you use to find files, and there are TONS of options with Smart Folders), you never have to worry about file management again. Presumably. 
+</p>
+<p>
+  <a href="https://github.com/rahatmaini/handy-scripts/blob/master/savedSearchTagger.py">macOS Saved Search Tagger</a>
+</p>
+    </div>
 
 
 
