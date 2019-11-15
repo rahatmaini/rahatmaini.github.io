@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Living Classrooms</title>
+  <link rel="stylesheet" href="themify-icons.css">
+  <style type="text/css">
+    html,body{margin:0px;height:100%;width:100%;font-family: 'Source Sans Pro', sans serif;}
+    .container{width:100%;height:100%}
+    #info{position:fixed;background-color:rgba(13, 13, 13, 0.5);padding:10px 10px 10px 10px;font:13px bold sans-serif;color:#fff;left:0px;top:0px;width:100%;height:140px;overflow:hidden}
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900&display=swap');
+    
+    .floating-menu-topleft {
+      font-family: 'Source Sans Pro', sans-serif;
+      background: #e9e9e9;
+      padding: 1%;
+      margin-top: 2.5em;
+      margin-left: 1.3em;
+      width: auto;
+      opacity: 0.8;
+      z-index: 100;
+      position: fixed;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+      border-radius: 0.5em;
+    }
+
+    .floating-menu-topleft a, h3, h4 {
+      font-family: 'Source Sans Pro', sans serif;
+      text-decoration: none;
+      text-align: center;
+      display: fixed;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      color: black;
+    }
+
+    .floating-menu-bottomRight {
+      font-family: 'Source Sans Pro', sans serif;
+      background: #e9e9e9;
+      text-align: center;
+      padding-top: 0.5%;
+      padding-bottom: 0.5%;
+      padding-right: 1%;
+      padding-left: 1%;
+      margin-top: 2.5em;
+      right: 1.3em;
+      opacity: 0.8;
+      width: auto;
+      z-index: 100;
+      position: fixed;
+      bottom: 2.5em;
+      right: 1.3em;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+      border-radius: 0.5em;
+    }
+
+    .floating-menu-bottomRight a, 
+    .floating-menu-bottomRight h3 {
+      font-family: 'Source Sans Pro', sans serif;
+      display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      color: black;
+    }
+
+    .floating-menu-topRight {
+      font-family: 'Source Sans Pro', sans serif;
+      background: #e9e9e9;
+      opacity: 0.8;
+      text-align: center;
+      padding: 1%;
+      width: auto;
+      z-index: 100;
+      position: fixed;
+      top: 2.5em;
+      right: 1.3em;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+      border-radius: 0.5em;
+    }
+
+    .floating-menu-topRight a, 
+    .floating-menu-topRight h3 {
+      font-family: 'Source Sans Pro', sans serif;
+      font-size: 1em;
+      display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      color: black;
+    }
+
+    .floating-menu-bottomLeft {
+      font-family: sans-serif;
+      background: #e9e9e9;
+      opacity: 0.8;
+      text-align: center;
+      padding: 1%;
+      width: auto;
+      z-index: 100;
+      position: fixed;
+      bottom: 2.5em;
+      margin-left: 1.3em;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+      border-radius: 0.5em;
+    }
+
+    .floating-menu-bottomLeft a, 
+    .floating-menu-bottomLeft h3 {
+      font-size: 1em;
+      display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      color: black;
+    }
+
+
+
+    .collapsible {
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      background-color: inherit;
+    }
+    
+    .content {
+      display: none;
+      overflow: hidden;
+    }
+
+    input[type=text] {
+      background-color: #dfdfdf;
+      border: none;
+      color: black;
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      border-radius: 0.5em;
+      text-decoration: none;
+    }
+    input:focus {
+      outline-color: #fff;
+      outline-width: 1px;
+    }
+
+
+
+  </style>
+  
+  <link rel="stylesheet" href="maptalks.css">
+  <link rel="stylesheet" type="text/css" href="pikaday.css">
+  <script type="text/javascript" src="maptalks.min.js"></script>
+  <script src="pikaday.js"></script>
+
+
+  <body>
+
+    <nav class="floating-menu-topleft">
+      <button type="button" class="collapsible" onclick="changeIcon()"><h3>Hello, Nada&nbsp;&nbsp;<span class="ti-arrow-circle-down" style="vertical-align: -1px" id="theIcon"></span></h3></button>
+      <div class="content">
+      <a href= ""><h5>Add/Remove Classes</h5></a>
+      <a href= ""><h5>Export Current Data</h5></a>
+      <a href=""><h5>Sign Out</h5></a>
+      </div>
+    </nav>
+
+    <nav class="floating-menu-topRight">
+      <h3>Data</h3>
+      <h5>
+        <table>
+          <tr>
+          <th>Temperature</th>
+          <th>97</th>
+          </tr>
+        </table>
+      </h5>
+    </nav>
+
+    <nav class="floating-menu-bottomRight">
+        <h3>Time Travel</h3>
+        <input type="text" id="datepicker" placeholder="MM/DD/YYYY">
+        <select>
+          <option value="0000">12AM</option>
+          <option value="0000">12:30AM</option>
+          <option value="0000">1AM</option>
+          <option value="0000">12AM</option>
+          <option value="0000">2AM</option>
+          <option value="0000">2:30AM</option>
+          <option value="0000">3AM</option>
+          <option value="0000">3:30AM</option>
+          <option value="0000">4AM</option>
+          <option value="0000">4:30AM</option>
+          <option value="0000">5AM</option>
+          <option value="0000">5:30AM</option>
+          <option value="0000">6AM</option>
+          <option value="0000">6:30AM</option>
+          <option value="0000">7AM</option>
+          <option value="0000">7:30AM</option>
+          <option value="0000">8AM</option>
+          <option value="0000">8:30AM</option>
+          <option value="0000">9AM</option>
+          <option value="0000">9:30AM</option>
+          <option value="0000">10AM</option>
+          <option value="0000">10:30AM</option>
+          <option value="0000">11AM</option>
+          <option value="0000">11:30AM</option>
+          <option value="0000">12PM</option>
+          <option value="0000">12:30PM</option>
+          <option value="0000">1PM</option>
+          <option value="0000">1:30PM</option>
+          <option value="0000">2PM</option>
+          <option value="0000">2:30PM</option>
+          <option value="0000">3PM</option>
+          <option value="0000">3:30PM</option>
+          <option value="0000">4PM</option>
+          <option value="0000">4:30PM</option>
+          <option value="0000">5PM</option>
+          <option value="0000">5:30PM</option>
+          <option value="0000">6PM</option>
+          <option value="0000">6:30PM</option>
+          <option value="0000">7PM</option>
+          <option value="0000">7:30PM</option>
+          <option value="0000">8PM</option>
+          <option value="0000">8:30PM</option>
+          <option value="0000">9PM</option>
+          <option value="0000">9:30PM</option>
+          <option value="0000">10PM</option>
+          <option value="0000">10:30PM</option>
+          <option value="0000">11PM</option>
+          <option value="0000">11:30PM</option>
+        </select>
+    </nav>
+
+    <nav class="floating-menu-bottomLeft">
+        <h3><span class="ti-layers-alt" title="3D mode"></span>
+        <br><br>
+        <span class="ti-user" title="Student Heatmap"></span>
+      </h3>
+    </nav>
+
+
+
+    <div id="map" class="container"></div>
+    
+      
+    <script>
+        function changeIcon() {
+          if (document.getElementById("theIcon").className == "ti-arrow-circle-up")
+          {
+            document.getElementById("theIcon").className = "ti-arrow-circle-down";
+          }
+          else{
+            document.getElementById("theIcon").className = "ti-arrow-circle-up";
+          }
+        
+        }
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+        
+        
+    <script>
+      var map = new maptalks.Map('map', {
+        center: [-78.510388,38.031691],
+        zoom: 19,
+        baseLayer: new maptalks.TileLayer('base', {
+          urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+          subdomains: ['a','b','c','d'],
+          attribution: ''
+        })
+      });
+
+      /*var multiPolygon = new maptalks.MultiPolygon(
+        [
+        [[[-78.510388,38.031691], [-78.510950,38.031875], [-78.511119,38.031651],[-78.510576,38.031420]]],
+        [[[ -78.510984,38.032386], [-78.511306,38.032492], [-78.511110,38.032904],[-78.510769,38.032792]]]
+        ], {
+        visible : true,
+        editable : true,
+        cursor : null,
+        shadowBlur : 0,
+        shadowColor : 'black',
+        draggable : false,
+        dragShadow : true, // display a shadow during dragging
+        drawOnAxis : null,  // force dragging stick on a axis, can be: x, y
+        symbol: {
+          'lineColor' : '#34495e',
+          'lineWidth' : 2,
+          'polygonFill' : 'rgb(10,10,10)',
+          'polygonOpacity' : 0.5
+        }
+      });
+
+      new maptalks.VectorLayer('vector', multiPolygon).addTo(map);*/
+
+      /*var customPosition = new maptalks.control.Zoom({
+        'position'  : { 'bottom' : '42', 'left' : '20' },
+        'slider'    : false,
+        'zoomLevel' : false
+      });
+      map.addControl(customPosition);*/
+
+      map.on('click', function (param) {
+        var infoDom = document.getElementById('info');
+        infoDom.innerHTML = '<div>' + new Date().toLocaleTimeString() +
+          ': click map on ' + param.coordinate.toFixed(5).toArray().join() + '</div>' +
+          infoDom.innerHTML;
+      });
+
+    </script>
+
+<script src="pikaday.js"></script>
+<script>
+    var picker = new Pikaday({ field: document.getElementById('datepicker') });
+</script>
+  </body>
+</html>
+
