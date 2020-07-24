@@ -60,70 +60,16 @@
       
 
 
-    <button class="collapsible"><h2>Redesigning Publication Database Sites</h2></button>
-    <div class="content">
-     <img src="images/publicationDB/20190830_152551000_iOS.jpg" width="40%" height="40%" class="centeredImg">
-
-<p>Many scientific publication hosting sites have incredibly outdated, frustrating, and aesthetically unpleasant user interfaces. This is usually out of no desire/need to update such sites (those that use the tools, know the tools). A notable exception is Google Scholar, which aggregates publications from across the internet into a relatively streamlined tool.</p>
-<img src="images/publicationDB/20190830_153358000_iOS.jpg" width="40%" height="40%" class="centeredImg">
-<p>Search, as usual, is the heart of Google’s product, with filters off to the side and the results being the center piece, but is there way to make this interface more inviting, and bring modern features into the interfaces of the other, more antiquated publication hosts?</p>
-
-<img src="images/publicationDB/search.png" class="centeredImg" width="40%" height="40%">
-
-<p>One thing I have been most intrigued by is natural language processing, and parsing text for further analysis. For a publication database, it seems as if the main method of interaction is text input, where the user seems to know pretty much exactly what they want rather than go on a journey of discovery to find a paper to read. From the publication databases I visited (except for Google Scholar, which of course they nailed their method of search/text input), most were relying on multiple text boxes and filter options and tons of unappealingly complex input types. The single most beneficial element on a publication database would be a search box armed with AI to parse text into filters automatically for the user. Imagine having a universal search box that knows whether your input is a name, a year, or a DOI number! So I designed an entire UI for such an application, where search is front and foremost, that was designed with NASA in mind as the publication host.</p>
-
-<img src="images/publicationDB/Main.png" class="centeredImg" width="60%" height="60%">
-
-<p>Here you can see how prominent the search box is, and how the placeholder text invitingly says "just type" instead of something more traditional like "search database". I believe little things like that (that as you said, management doesn’t notice, but we do) are important. There was no way to get around a header, so I tried going for the least obtrusive one (one that would be lacking a solid colored horizontal bar across the top of the screen). The links float, and the active link follows the color of the logo on the far right, which thankfully gave me an accent color to play with. The logo really balances out the top right of the page well, despite having no interactive elements there it certainly doesn’t feel empty or plain. Most of the interactive elements have drop shadows, to signify depth on the page and the fact that they are actionable elements. I use iconography in a few places (search, citation, and trending/your recommendations) for clarity and avoidance of what is traditionally an extremely text heavy type of website. Publication sites don’t have very many pretty pictures! Text colors on the publication cards vary, black for the most important, light gray for secondary info, and red for standout information (in this case, the number of people who have cited that specific publication). Also, notice that the UI scales very well for the desktop web, but it appears very touch friendly too. Large touch targets!</p>
-
-<img src="images/publicationDB/Parallax.png" class="centeredImg" width="60%" height="60%">
-
-<p>I have a love/hate relationship with solid color backgrounds. Love because minimalism is great, hate because it seems TOO bare. The alternatives are often tasteless, such as extreme gradients (although can be done well!), or full background textures or images. A happy medium I found was using a line drawn icons that are only slightly darker than the background color (to be an accent rather than a distraction). This however gave it a slight children’s daycare website vibe, so I experimented with a slightly more sophisticated version of it below, which retains the solid color for the background of the page, but adds iconography to the main card elements.</p>
-
-<img src="images/publicationDB/coolerParallax.png" class="centeredImg" width="60%" height="60%">
-
-<p>So here, the publication cards have the line drawn icons on them. I think it looks great, and all the cards on the page could be programmed to have different icons (so in this example, 6 cards are shown, create twice that much and with each scroll you dynamically change the cards that are hidden from view and about to appear into view change their icon behind the scenes. This way, the user never sees the same icon twice in one screen. Another cool idea would be parallax scrolling (both horizontally and vertically) between the icons and the cards.</p>
- 
-
-<img src="images/publicationDB/hover.png" class="centeredImg" width="60%" height="60%">
-
-<p>This expands on the UI by introducing a "quick peek" interaction model, either activated by a hover or a click. This lets you dive a bit deeper into the publication (shows the abstract and gives the option to add to your library). Inverting the colors seemed to me to be a good aesthetic choice and one that makes it visually evident which element is being interacted with.</p>
- 
-<img src="images/publicationDB/buttons.png" class="centeredImg" width="40%" height="40%">
-
-<p>These action buttons are elegant and could present themselves on a hover or click as well.</p>
-    </div>
-      <button class="collapsible"><h2>Envisioning a Student Information System Chatbot</h2></button>
-      <div class="content">
-      <img src="images/SIS chatbot/sis.png" width="70%" height="70%" class="centeredImg"/>
-      <p>With UIs getting more and more complex and layered (especially legacy UIs that get new features padded on, often with no design team overseeing the process), it can be difficult to make the experience an enjoyable one. A rethinking of the whole design to incorporate new features and ideas that have been added is not easy to do (and not a scalable approach). For portals that rely more on the "hunt-and-pick" method of interaction, where users know what they are looking for or what they want, just not where it is, a complex UI is a burden. Maybe a search function is a remedy in some cases. Discovery of new features and tools is not really the focus of these UIs, making the already well-known features accessible and available is. I cannot think of a better application for a chatbot user interface than a complicated UI in need of human-centric design.</p>
-
-      <img src="images/SIS chatbot/SISchatbot.png" width="30%" height="30%" class="centeredImg"/>
-      <p>Chatbots and conversational UIs have been invading our lives recently, whether in the form of a voice assistant on your phone, a chatbot in a messaging app, or the Alexa in your home. It's trendy, but rarely applied the best way it can be. In this case, it is a perfect user interface. Most of the tasks performed in a student information system (getting grades, finance information, transcripts, signing up for classes) can be easily explained by a natural language query. In such a system, there are no menus, submenus, buttons, or any of that mess. The user knows what they would like done, and they instruct their application to do so, naturally.</p>
-
-      <p>In the above mockup, you may notice a few things. The only real buttons are suggestions for additional queries, likely AI powered to know what users usually request next or what might be the next logical task or information in the system to retrieve at that moment. Also at the bottom you may notice the "hey lou" voice wake word, should the user want to use speech to interact with the bot (affectionately named Lou, a 1 in 49581 people name, easy to enter the vernacular of a school to refer to the application exclusively). The rest of the mockup is self-explanatory, and it is easy to imagine further applications of this kind of UI and the use cases it enables.</p>
-      </div>
+    <a href="posts/publication.html"><button class="collapsible"><h2>Redesigning Publication Database Sites</h2></button></a>
 
 
-      <button class="collapsible"><h2>The Case for a Side-Scrolling UI</h2></button>
-      <div class="content">
-      <img src="images/classroomPortal/courses.png" width="70%" height="70%" class="centeredImg"/>
-      <p>Making a webpage with limited content/UI is always a challenge in the sense that too much whitespace looks unsightly. This limited content may be a massive list you have to scroll through (in this case), but limited by the small amount of data expressed for each list item. How do you make a pleasing UI where all you have to do is scroll through a list and select an item? This is of course easily doable for screen sizes such as a phone perhaps, but when your core audience is people viewing your content through a widescreen Chrome window, this becomes very difficult.</p>
 
-      <p>
-      The norm is to have lists be vertically scrolling, of course. This makes a ton of sense when your content is heavily horizontal spanning. That way, the maximum screen real estate can be utilized. In this situation however, I had to work with text-only data points that don't quite take up much space. As you can see, there are only 4 distinct text boxes per element in the list to be scrolled. Having this scroll vertically would be a tremendous waste of horizontal. It's clear that horizontally scrolling would be the way to go, but what is the best way to take advantage of all that new gained vertical space per element?
-      </p>
+    <a href="posts/SIS.html"><button class="collapsible"><h2>Envisioning a Student Information System Chatbot</h2></button></a>
+   
 
-      <p>
-        Iconography and its effect on easing cognitive load for processing data needs no explanation. It was clear that for better comprehension of the data as well as a aesthetically appealing look, icons would have to be employed. In this case, I opted for line-drawn icons instead of filled icons, for aesthetics and the discomfort I feel when seeing a filled icon that is not a button of some sort. Optimal padding is present, to give each data point ample breathing room (and to liberally use all that vertical space). The use of shadows helps establish depth and layers to the page, and of course typography establishes hierarchy (large font size for the title of the page, small but bold for the card title, and regular and smaller for each data point in the cards).
-      </p>
 
-      <p>
-        The moral of the story is that side scrolling is a fantastic tool in the utility kit for a web designer, one that is criminally underused perhaps since people are not used to it or that scrollwheel mice are physically designed to scroll vertically (however many people still using those, but hey that might be your core audience). Especially in a situation like this, horizontal scrolling is an efficient use of screen real estate and looks fantastic.
-      </p>
-
-      <p style="text-align: center"><i>You can find all the code for this side-scroller on my <a href="https://github.com/rahatmaini/sideScrollingWebpage" target="_blank" rel="noopener" class="normalLink">Github</a></i></p>
-      </div>
+    <a href="posts/sidescroll.html"><button class="collapsible"><h2>The Case for a Side-Scrolling UI</h2></button></a>
+      
 
       
 
