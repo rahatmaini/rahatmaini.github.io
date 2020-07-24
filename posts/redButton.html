@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <link rel="stylesheet" href="../stylesheet.css">
+
+  <meta charset="UTF-8">
+  <title>Rahat Maini</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+  <link rel="manifest" href="../favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+ 
+  
+  
+</head>
+
+<body>
+
+  <header class="header sticky sticky--top js-header">
+
+  <div class="grid">
+
+    <nav class="navigation">
+      <ul class="navigation__list navigation__list--inline">
+        <li class="navigation__item"><a href="../index.html">Me</a></li>
+        <li class="navigation__item"><a href="../tech.html" class="is-active">Projects</a></li>
+        <li class="navigation__item"><a href="../graphic.html">Design</a></li>
+        <li class="navigation__item"><a href="../blog.html">Thoughts</a></li>
+        
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+<main class="main">
+  
+  <div class="grid">
+    
+   <h1>Reforming Red Button Behavior in macOS</h1>
+   <img src="../images/redx.png" class="centeredImg"/>
+    <p>macOS has an unusual (to users of Windows since the start, at least) quirk to it. The behavior of the red window bar button is somewhat unpredictable! Apple’s most recent apps (notably the Catalina apps that are part of “Mac Catalyst”, Apple’s project to bring iPadOS apps) behave in the most intuitive way, where the red button closes the app window AS WELL as the entire application process associated with it. However, many apps, 3rd party or 1st, do not terminate on window closure. Terminal and Safari are just the first two that come to mind. I have written an AppleScript (AppleScript script?) to correct this. It can be run in the background using Apple’s built-in <a href="https://www.maketecheasier.com/use-launchd-run-scripts-on-schedule-macos/">task scheduler</a>, some relatively janky automation built with Apple’s preinstalled Automator app, or my preferred method: Download <a href="https://www.folivora.ai/">BetterTouchTool</a> (in my opinion a must-have macOS utility), and remap the actual red window bar button across macOS to run the AppleScript below.</p>
+
+<a href="https://www.github.com/rahatmaini/handy-scripts/blob/master/Red%20Button%20Task%20Killer.scpt/">macOS Red Button Task Killer</a>
+
+<p>The script begins by retrieving a list of all processes (applications) that are not meant to be background-only processes (so, the Honey browser extension, running in the background, is not something we concern ourselves with. It is not an app that will sit on the dock with an open indicator haunting us). There is a (short) whitelist of apps that should never be killed. I have added Finder and BetterTouchTool to that list, you can add whatever apps you would like if in some cases you do prefer the red button’s default behavior. The script iterates through the list of non-background-only processes, and if a process does not have a window open (so these are apps that you have hit the red button on, but they are “hidden in plain sight”), the “osascript” command (which is the terminal command to execute an AppleScript itself, so likely the parameters that follow it can just be programmed into the AppleScript itself instead of calling a shell script. Left as an exercise to the reader…) then kills the process. Done. </p>
+
+<p>I should preface my motivation to build this script began with Apple populating my dock with apps I closed and would not like to see again till I reopen them. Unlike iOS, there is no elegant hiding of what’s going on in the background; these “closed but open apps” have a prominent indicator on the dock to signify that they are indeed open and the red window bar button is nothing more than a minimize button that doesn’t save app state. The way those billion devices in pockets around the world are an intuitive rethinking of handling application closure, macOS is like a halfway step between Windows and iOS in that regard, for the worse.</p>
+
+<p>Why does macOS behave this way and has been for pretty much its entire existence? Windows and macOS have incredibly different ideas about window management, application interactions, and this is an example of one of those ideas. Windows, true to its name, treats the app window as the entire enclosure of the application, when you close the window, the application ceases. macOS believes an app is more than just the window, that the window is just a component of the whole app process. Hence why you still see the active menu bar after hitting the red button on Safari, and can open a new, different window (maybe a private Safari window, or the Show All History window) from that menu bar with no window for Safari existing. And on Windows the same can only be done once you have a window open for that app to see the menu bar.</p>
+
+<p>These different approaches to apps have different implications for memory and CPU management I presume, and not in a favorable way for Apple I presume. An assumption I make is that there is a tradeoff they have accepted to give users the snappiest performance while balancing computer resources, one that Windows does not bother to concern itself with in regards to this app-closing fiasco. It’s hard to say which approach is objectively better, but it does give “Think Different” some tangible credibility for Apple. Based on the existence of this post, you can probably guess which approach I prefer.</p>
+    
+  
+  </div>
+
+</main>
+  
+  
+
+    <script  src="../script.js"></script>
+
+
+</body>
+
+
+</html>

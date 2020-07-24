@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <link rel="stylesheet" href="../stylesheet.css">
+
+  <meta charset="UTF-8">
+  <title>Rahat Maini</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+  <link rel="manifest" href="../favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+ 
+  
+  
+</head>
+
+<body>
+
+  <header class="header sticky sticky--top js-header">
+
+  <div class="grid">
+
+    <nav class="navigation">
+      <ul class="navigation__list navigation__list--inline">
+        <li class="navigation__item"><a href="../index.html">Me</a></li>
+        <li class="navigation__item"><a href="../tech.html" class="is-active">Projects</a></li>
+        <li class="navigation__item"><a href="../graphic.html">Design</a></li>
+        <li class="navigation__item"><a href="../blog.html">Thoughts</a></li>
+        
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+<main class="main">
+  
+  <div class="grid">
+    
+   <h1>Bringing macOS's Smart Folders to iOS</h1>
+   <img src="../images/tags.png" class="centeredImg"/>
+    <p>With the Files app in iOS, Apple brought the closest clone of Finder yet to iOS, highlighting their seriousness in turning their popular mobile platform into a serious full-time computer for an increasing number of people. As they work on bringing it to feature parity, one useful (and relatively unknown) feature of Finder is yet to show face on iOS: Smart Folders.</p>
+<p>
+Smart Folders are essentially "saved searches" (in fact, behind the scenes that is their official name, where you select certain parameters to locate a set of files and these populate a virtual folder of sorts. For example, if I wanted a folder full of all PDFs that contain "CS 4750" in their name, I could do so. Of course, the original location of these files remain unchanged, as the smart folder is simply a list of pointers to these files. Think of tags but automatic, as creation of a new PDF with "CS 4750" in its name would automatically show that PDF in the smart folder.</p>
+<p>
+The closest analog iOS's Files app has, is the Tags feature, which allows you to label files and collect them across the filesystem without altering their physical location. Thankfully, we can take advantage of Tags support on iOS and convert Smart Folders to Tags on macOS, at which point they automatically sync and show up in the iOS Files app.</p>
+<p>
+The workflow starts by going through each Saved Search on your Mac, opening the search and extracting the raw query macOS uses to search the filesystem for files that belong in that Saved Search (the mdfind command in the Terminal is how this works). After populating a dictionary of Saved Searches and their raw queries, I go through every file returned by each raw query, and tag it (using jdberry's wonderful <a href="https://github.com/jdberry/tag"> command line tagging utility </a>) based on the name of the saved search.</p>
+<p>
+Now with clever naming of files (or whatever parameters you use to find files, and there are TONS of options with Smart Folders), you never have to worry about file management again. Presumably. 
+</p>
+<p>
+  <a href="https://github.com/rahatmaini/handy-scripts/blob/master/savedSearchTagger.py">macOS Saved Search Tagger</a>
+</p>
+  
+  </div>
+
+</main>
+  
+  
+
+    <script  src="../script.js"></script>
+
+
+</body>
+
+
+</html>

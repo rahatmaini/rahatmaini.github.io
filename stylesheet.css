@@ -154,17 +154,17 @@
 	  font-weight: 900;
   }
 
-  .normalLink:link {
+  a:link {
 	  color: black;
 	  transition: 0.3s ease-out;
   }
 
-  .normalLink:visited {
+  a:visited {
 	color: gray;
 	transition: 0.3s ease-out;
 	}
 
-   .normalLink:hover {
+   a:hover {
 		color: black;
 		transition: 0.3s ease-out;
 	}
