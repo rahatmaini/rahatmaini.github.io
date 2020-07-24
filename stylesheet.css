@@ -1,70 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900&display=swap');
-/*@font-face {
-    font-family: product sans;
-    src: url('fonts/product_sans_regular-webfont.woff2') format('woff2'),
-         url('fonts/product_sans_regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
+/*cards*/
+
+.card-image {
+	display: block;
+	min-height: 20rem; /* layout hack */
+	background-size: cover;
 }
 
-
-
-@font-face {
-    font-family: product sans bold italic;
-    src: url('fonts/product_sans_bold_italic-webfont.woff2') format('woff2'),
-         url('fonts/product_sans_bold_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+.card-list {
+	display: block;
+	margin: 1rem auto;
+	padding: 0;
+	font-size: 0;
+	text-align: center;
+	list-style: none;
 }
 
-
-@font-face {
-    font-family: product sans bold;
-    src: url('fonts/product_sans_bold-webfont.woff2') format('woff2'),
-         url('fonts/product_sans_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+.card {
+	display: inline-block;
+	width: 90%;
+	max-width: 20rem;
+	border-style: none;
+	border-radius: 10px;
+	margin: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	overflow: hidden;
+	background-color: #101010;
+	transition: 0.3s ease-in;
 }
 
-
-
-
-@font-face {
-    font-family: product sans italic;
-    src: url('fonts/product_sans_italic-webfont.woff2') format('woff2'),
-         url('fonts/product_sans_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+.card:hover {
+	background-color: #3a3a3a;
+	transition: 0.3s ease-out;
+	-webkit-box-shadow: 0 0.0625em 1.5em rgba(0, 0, 0, .3);
+	box-shadow: 0 0.0625em 1.5em rgba(0, 0, 0, 0.3);
 }
 
-
-@font-face {
-	font-family: 'themify';
-	src:url('fonts/themify.eot?-fvbane');
-	src:url('fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'),
-		url('fonts/themify.woff?-fvbane') format('woff'),
-		url('fonts/themify.ttf?-fvbane') format('truetype'),
-		url('fonts/themify.svg?-fvbane#themify') format('svg');
-	font-weight: normal;
-	font-style: normal;
+.card-description {
+	display: block;
+	padding: 1em 0.5em;
+	color: #ffffff;
+	text-decoration: none;
 }
 
-*/
+.card-description > h2 {
+	margin: 0 0 0.2em;
+}
+
+.card-description > p {
+	margin: 0;
+	line-height: normal;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 2.5%;
+	color: #686868;
+}
+
+/*cards end*/
 
 .collapsible {
-	background-color: #101010;
 	color: white;
 	cursor: pointer;
 	width: 100%;
 	border: none;
 	outline: none;
+	background-color: #101010;
 	transition: 0.3s ease-in;
 	font-weight:900;
-	
 	
   }
 
@@ -88,7 +92,7 @@
 	position: -webkit-sticky;
   	position: sticky;
 	top: 0;
-	  -webkit-box-shadow: 0 0.0625em 1.5em rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 0.0625em 1.5em rgba(0, 0, 0, .3);
 	box-shadow: 0 0.0625em 1.5em rgba(0, 0, 0, 0.3);
 	/*font-size: 0.9em;*/
   }
@@ -102,7 +106,7 @@
 .centeredImg {
 	display: block;
   	margin-left: auto;
-  	margin-right: auto;
+	margin-right: auto;
 }
 
 .grid {
@@ -119,6 +123,7 @@
 	position: sticky;
 	will-change: transform;
   }
+
   
   .sticky--top {
 	top: 0;
@@ -138,23 +143,28 @@
 	overflow-y: scroll;
   }
 
+  button {
+	  border-radius: 0;
+	  margin: 1px;
+  }
+
   h2 {
 	  margin-top: 19px;
 	  margin-bottom: 19px;
 	  font-weight: 900;
   }
 
-  a:link {
+  .normalLink:link {
 	  color: black;
 	  transition: 0.3s ease-out;
   }
 
-  a:visited {
+  .normalLink:visited {
 	color: gray;
 	transition: 0.3s ease-out;
 	}
 
-	a:hover {
+   .normalLink:hover {
 		color: black;
 		transition: 0.3s ease-out;
 	}
