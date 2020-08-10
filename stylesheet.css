@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900&display=swap');
 
+@font-face {
+    font-family: product sans;
+    src: url('fonts/product_sans_regular-webfont.woff2') format('woff2'),
+         url('fonts/product_sans_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 /*cards*/
+
+.nonReadingParagraph {
+	font-family: product sans;
+	font-weight: normal;
+}
 
 .card-image {
 	display: block;
@@ -175,7 +188,7 @@
   /* layout/header.css */
   
   .header {
-	background-color: #f4f4f4;
+	background-color: #F4F4F4;
 	padding-bottom: 1.1em;
 	padding-top: 1em;
 	font-weight:900;
@@ -255,7 +268,7 @@ p {
 }
 
 body {
-	background-color: #f4f4f4;
+	background-color: #F4F4F4;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
 	/*font-family: product sans, sans-serif;*/
